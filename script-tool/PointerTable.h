@@ -5,7 +5,12 @@
 //  Created by Emmanuel Peralta on 06/06/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
+
+#ifndef POINTERTABLE_H
+#define POINTERTABLE_H
+
 #include <vector>
+#include <fstream>
 #include "Pointer.h"
 #include "PointerTableDef.h"
 
@@ -21,6 +26,9 @@ public:
     
     Pointer* at(int index);
     
-    void loadFromFile(istream* stream, PointerTableDef *def);
+    void loadFromFile(ifstream* stream, PointerTableDef *def);
+    void writeToFile(ofstream* stream, PointerTableDef *def);
 
 };
+
+#endif /* POINTERTABLE_H */

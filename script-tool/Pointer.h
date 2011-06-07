@@ -5,6 +5,8 @@
 //  Created by Emmanuel Peralta on 06/06/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
+#ifndef POINTER_H
+#define POINTER_H
 
 #include <ostream>
 
@@ -27,3 +29,4 @@ public:
     void setIndex(int index);
 };
 
+#endif /* POINTER_H */
