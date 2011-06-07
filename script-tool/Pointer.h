@@ -23,9 +23,9 @@ public:
     
     bool writeTo(ostream stream, long at);
     
-    long getValue();
+    long getValue()const;
     void setValue(long value);
-    int getIndex();
+    int getIndex()const;
     void setIndex(int index);
 };
 

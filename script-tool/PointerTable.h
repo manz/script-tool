@@ -24,7 +24,12 @@ public:
     PointerTable();
     ~PointerTable();
     
-    Pointer* at(int index);
+    const Pointer* at(int index);
+    
+    void add(Pointer *p);
+    
+    size_t size();
+    
     
     void loadFromFile(ifstream* stream, PointerTableDef *def);
     void writeToFile(ofstream* stream, PointerTableDef *def);

@@ -17,14 +17,22 @@ PointerTable::~PointerTable() {
     delete[] pointers;
 }
 
-Pointer* PointerTable::at(int index) {
+const Pointer* PointerTable::at(int index) {
     //TODO: add boundaries check
     return pointers->at(index);
 }
 
+void PointerTable::add(Pointer *p) {
+    pointers->push_back(p);
+}
+
+size_t PointerTable::size() {
+    return pointers->size();
+}
+
 void PointerTable::loadFromFile(ifstream* stream, PointerTableDef *def) {
     //TODO implements loading pointers from file
-    
+    stream->seekg(def->getBegin());
     this->pointerTableDef = def;
     unsigned char *buffer = new unsigned char[def->getLength()];
     FormulaBlock callback = def->getFormulaCallback();
@@ -36,6 +44,7 @@ void PointerTable::loadFromFile(ifstream* stream, PointerTableDef *def) {
         
         if (def->getLittleEndian()) {
             for (int j=0; j<def->getLength(); j++) {
+                
                 value = value + (buffer[j] << (8 * j));
             }
         }

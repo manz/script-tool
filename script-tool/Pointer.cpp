@@ -21,7 +21,7 @@ bool Pointer::writeTo(ostream stream, long at) {
     return true;
 }
 
-long Pointer::getValue() {
+long Pointer::getValue()const {
     return value;
 }
 
@@ -29,7 +29,7 @@ void Pointer::setValue(long value) {
     this->value = value;
 }
 
-int Pointer::getIndex() {
+int Pointer::getIndex()const {
     return index;
 }
 
