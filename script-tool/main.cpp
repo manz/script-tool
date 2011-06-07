@@ -21,6 +21,43 @@ int main (int argc, const char * argv[])
 		return ret;
 	});
     
+    /*
+     1 extbp .\roms\FF4J2E.smc .\tables\FF4t12.tbl .\txt_us\Bank1-1.txt $80600 $8F693 $80200 $200 2 X+$600 snes
+     2 extbp .\roms\FF4J2E.smc .\tables\FF4t12.tbl .\txt_us\Bank1-2.txt $110400 $115650 $110200 $100 2 X+$400 snes
+     3 extbp .\roms\FF4J2E.smc .\tables\FF4t12.tbl .\txt_us\Bank2.txt $100500 $10F033 $100200 $150 2 X+$500 snes
+     4 extf .\roms\FF4J2E.smc .\tables\ff4f.tbl .\txt_us\monst_mag.txt $119D80 $b8 8 $00 $00
+     5 extf .\roms\FF4J2E.smc .\tables\ff4f.tbl .\txt_us\magic.txt $11AFC0 $48 8 $00 $00
+     6 extf .\roms\FF4J2E.smc .\tables\ff4f.tbl .\txt_us\items.txt $78200 $100 9 $00 $00
+
+     */
+    
+    long bank1 = 0x80600;
+    
+    // todo a scriptable block :)
+    // converts raw pointer to absolute PC address.
+    FormulaBlock ff4_bank1 = ^(long value) {
+        long retval = value + bank1;
+        return retval;  
+    };
+    
+    PointerTableDef *bank1PtrDef = new PointerTableDef();
+    bank1PtrDef->setBegin(0x080200);
+    bank1PtrDef->setCount(0x200);
+    bank1PtrDef->setLength(2);
+    bank1PtrDef->setFormulaCallback(ff4_bank1);
+    bank1PtrDef->setLittleEndian(true);
+    
+    PointerTable *bank1Ptr = new PointerTable();
+    
+    ifstream *rom = new ifstream("/Users/manz/FF4J2e.smc");
+    
+    bank1Ptr->loadFromFile(rom, bank1PtrDef);
+    
+    cout << "pointer loaded " << bank1Ptr->size() << endl;
+    
+    for (int i=0; i<bank1Ptr->size(); i++) {
+        cout << dec << bank1Ptr->at(i)->getIndex() << ":" << hex << bank1Ptr->at(i)->getValue() << endl;
+    }
     
     Table * ff4 = new Table();
     
