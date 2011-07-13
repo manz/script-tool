@@ -7,8 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B40C0629139E240200EFB9C6 /* Table.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4351403139CD1FC0092BBD2 /* Table.cpp */; };
+		B40C062A139E240200EFB9C6 /* Pointer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4351406139CD3FA0092BBD2 /* Pointer.cpp */; };
+		B40C062B139E240200EFB9C6 /* Extractor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4351409139CD6770092BBD2 /* Extractor.cpp */; };
+		B40C062C139E240200EFB9C6 /* Inserter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B435140C139CD68A0092BBD2 /* Inserter.cpp */; };
+		B40C062D139E240200EFB9C6 /* PointerTable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B435140F139CD9840092BBD2 /* PointerTable.cpp */; };
+		B40C062E139E240200EFB9C6 /* PointerTableDef.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4351412139CDA350092BBD2 /* PointerTableDef.cpp */; };
+		B40C062F139E240200EFB9C6 /* TextBlockDef.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4351415139CDEDE0092BBD2 /* TextBlockDef.cpp */; };
+		B40C0630139E240200EFB9C6 /* BytesHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4351419139D10A20092BBD2 /* BytesHelper.cpp */; };
+		B40C0631139E240200EFB9C6 /* TextBlock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B435141C139D142B0092BBD2 /* TextBlock.cpp */; };
+		B40C0632139E242E00EFB9C6 /* liblibscript.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B40C0625139E23D200EFB9C6 /* liblibscript.a */; };
 		B43513FC139CD1DD0092BBD2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B43513FB139CD1DD0092BBD2 /* main.cpp */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B40C0633139E243400EFB9C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B43513EE139CD1DC0092BBD2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B40C0624139E23D200EFB9C6;
+			remoteInfo = libscript;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		B43513F5139CD1DC0092BBD2 /* CopyFiles */ = {
@@ -23,16 +43,48 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B40C0625139E23D200EFB9C6 /* liblibscript.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblibscript.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B43513F7139CD1DC0092BBD2 /* script-tool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "script-tool"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B43513FB139CD1DD0092BBD2 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		B43513FD139CD1DD0092BBD2 /* script_tool.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = script_tool.1; sourceTree = "<group>"; };
+		B4351403139CD1FC0092BBD2 /* Table.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Table.cpp; sourceTree = "<group>"; };
+		B4351404139CD1FC0092BBD2 /* Table.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Table.h; sourceTree = "<group>"; };
+		B4351406139CD3FA0092BBD2 /* Pointer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Pointer.cpp; sourceTree = "<group>"; };
+		B4351407139CD3FA0092BBD2 /* Pointer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pointer.h; sourceTree = "<group>"; };
+		B4351409139CD6770092BBD2 /* Extractor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Extractor.cpp; sourceTree = "<group>"; };
+		B435140A139CD6770092BBD2 /* Extractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Extractor.h; sourceTree = "<group>"; };
+		B435140C139CD68A0092BBD2 /* Inserter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Inserter.cpp; sourceTree = "<group>"; };
+		B435140D139CD68A0092BBD2 /* Inserter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Inserter.h; sourceTree = "<group>"; };
+		B435140F139CD9840092BBD2 /* PointerTable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PointerTable.cpp; sourceTree = "<group>"; };
+		B4351410139CD9840092BBD2 /* PointerTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointerTable.h; sourceTree = "<group>"; };
+		B4351412139CDA350092BBD2 /* PointerTableDef.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PointerTableDef.cpp; sourceTree = "<group>"; };
+		B4351413139CDA350092BBD2 /* PointerTableDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointerTableDef.h; sourceTree = "<group>"; };
+		B4351415139CDEDE0092BBD2 /* TextBlockDef.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextBlockDef.cpp; sourceTree = "<group>"; };
+		B4351416139CDEDE0092BBD2 /* TextBlockDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextBlockDef.h; sourceTree = "<group>"; };
+		B4351419139D10A20092BBD2 /* BytesHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BytesHelper.cpp; sourceTree = "<group>"; };
+		B435141A139D10A30092BBD2 /* BytesHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BytesHelper.h; sourceTree = "<group>"; };
+		B435141C139D142B0092BBD2 /* TextBlock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextBlock.cpp; sourceTree = "<group>"; };
+		B435141D139D142B0092BBD2 /* TextBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextBlock.h; sourceTree = "<group>"; };
+		B435143B139D176D0092BBD2 /* libscript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libscript.h; sourceTree = "<group>"; };
+		B435143D139D18EB0092BBD2 /* Font.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Font.cpp; sourceTree = "<group>"; };
+		B435143E139D18EB0092BBD2 /* Font.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Font.h; sourceTree = "<group>"; };
+		B4351440139D19250092BBD2 /* FontDef.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FontDef.cpp; sourceTree = "<group>"; };
+		B4351441139D19250092BBD2 /* FontDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontDef.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B40C0622139E23D200EFB9C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B43513F4139CD1DC0092BBD2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B40C0632139E242E00EFB9C6 /* liblibscript.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				B43513F7139CD1DC0092BBD2 /* script-tool */,
+				B40C0625139E23D200EFB9C6 /* liblibscript.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -60,13 +113,79 @@
 			children = (
 				B43513FB139CD1DD0092BBD2 /* main.cpp */,
 				B43513FD139CD1DD0092BBD2 /* script_tool.1 */,
+				B435143C139D18940092BBD2 /* libfont Sources */,
+				B4351418139CDF3B0092BBD2 /* libscript Sources */,
 			);
 			path = "script-tool";
 			sourceTree = "<group>";
 		};
+		B4351418139CDF3B0092BBD2 /* libscript Sources */ = {
+			isa = PBXGroup;
+			children = (
+				B4351403139CD1FC0092BBD2 /* Table.cpp */,
+				B4351404139CD1FC0092BBD2 /* Table.h */,
+				B4351406139CD3FA0092BBD2 /* Pointer.cpp */,
+				B4351407139CD3FA0092BBD2 /* Pointer.h */,
+				B4351409139CD6770092BBD2 /* Extractor.cpp */,
+				B435140A139CD6770092BBD2 /* Extractor.h */,
+				B435140C139CD68A0092BBD2 /* Inserter.cpp */,
+				B435140D139CD68A0092BBD2 /* Inserter.h */,
+				B435140F139CD9840092BBD2 /* PointerTable.cpp */,
+				B4351410139CD9840092BBD2 /* PointerTable.h */,
+				B4351412139CDA350092BBD2 /* PointerTableDef.cpp */,
+				B4351413139CDA350092BBD2 /* PointerTableDef.h */,
+				B4351415139CDEDE0092BBD2 /* TextBlockDef.cpp */,
+				B4351416139CDEDE0092BBD2 /* TextBlockDef.h */,
+				B4351419139D10A20092BBD2 /* BytesHelper.cpp */,
+				B435141A139D10A30092BBD2 /* BytesHelper.h */,
+				B435141C139D142B0092BBD2 /* TextBlock.cpp */,
+				B435141D139D142B0092BBD2 /* TextBlock.h */,
+				B435143B139D176D0092BBD2 /* libscript.h */,
+			);
+			name = "libscript Sources";
+			sourceTree = "<group>";
+		};
+		B435143C139D18940092BBD2 /* libfont Sources */ = {
+			isa = PBXGroup;
+			children = (
+				B435143D139D18EB0092BBD2 /* Font.cpp */,
+				B435143E139D18EB0092BBD2 /* Font.h */,
+				B4351440139D19250092BBD2 /* FontDef.cpp */,
+				B4351441139D19250092BBD2 /* FontDef.h */,
+			);
+			name = "libfont Sources";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		B40C0623139E23D200EFB9C6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		B40C0624139E23D200EFB9C6 /* libscript */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B40C0626139E23D200EFB9C6 /* Build configuration list for PBXNativeTarget "libscript" */;
+			buildPhases = (
+				B40C0621139E23D200EFB9C6 /* Sources */,
+				B40C0622139E23D200EFB9C6 /* Frameworks */,
+				B40C0623139E23D200EFB9C6 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = libscript;
+			productName = libscript;
+			productReference = B40C0625139E23D200EFB9C6 /* liblibscript.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		B43513F6139CD1DC0092BBD2 /* script-tool */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B4351400139CD1DD0092BBD2 /* Build configuration list for PBXNativeTarget "script-tool" */;
@@ -78,6 +197,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				B40C0634139E243400EFB9C6 /* PBXTargetDependency */,
 			);
 			name = "script-tool";
 			productName = "script-tool";
@@ -89,6 +209,9 @@
 /* Begin PBXProject section */
 		B43513EE139CD1DC0092BBD2 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
 			buildConfigurationList = B43513F1139CD1DC0092BBD2 /* Build configuration list for PBXProject "script-tool" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -102,11 +225,28 @@
 			projectRoot = "";
 			targets = (
 				B43513F6139CD1DC0092BBD2 /* script-tool */,
+				B40C0624139E23D200EFB9C6 /* libscript */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B40C0621139E23D200EFB9C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B40C0629139E240200EFB9C6 /* Table.cpp in Sources */,
+				B40C062A139E240200EFB9C6 /* Pointer.cpp in Sources */,
+				B40C062B139E240200EFB9C6 /* Extractor.cpp in Sources */,
+				B40C062C139E240200EFB9C6 /* Inserter.cpp in Sources */,
+				B40C062D139E240200EFB9C6 /* PointerTable.cpp in Sources */,
+				B40C062E139E240200EFB9C6 /* PointerTableDef.cpp in Sources */,
+				B40C062F139E240200EFB9C6 /* TextBlockDef.cpp in Sources */,
+				B40C0630139E240200EFB9C6 /* BytesHelper.cpp in Sources */,
+				B40C0631139E240200EFB9C6 /* TextBlock.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B43513F3139CD1DC0092BBD2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -117,7 +257,43 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		B40C0634139E243400EFB9C6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B40C0624139E23D200EFB9C6 /* libscript */;
+			targetProxy = B40C0633139E243400EFB9C6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		B40C0627139E23D200EFB9C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				EXECUTABLE_PREFIX = lib;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B40C0628139E23D200EFB9C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		B43513FE139CD1DD0092BBD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -128,6 +304,7 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
@@ -143,6 +320,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
@@ -175,6 +353,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B40C0626139E23D200EFB9C6 /* Build configuration list for PBXNativeTarget "libscript" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B40C0627139E23D200EFB9C6 /* Debug */,
+				B40C0628139E23D200EFB9C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		B43513F1139CD1DC0092BBD2 /* Build configuration list for PBXProject "script-tool" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -191,6 +377,7 @@
 				B4351402139CD1DD0092BBD2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

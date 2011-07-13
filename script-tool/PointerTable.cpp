@@ -17,7 +17,7 @@ PointerTable::~PointerTable() {
     delete[] pointers;
 }
 
-const Pointer* PointerTable::at(int index) {
+const Pointer* PointerTable::at(unsigned long index) {
     //TODO: add boundaries check
     return pointers->at(index);
 }

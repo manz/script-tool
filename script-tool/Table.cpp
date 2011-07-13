@@ -18,11 +18,12 @@ Table::~Table() {
 }
 
 void Table::loadTableFromFile(ifstream *stream) {
+    /*
     if (!stream->is_open()) {
         std::cout << "file isn't opened" << std:: endl;
-        return;
+        abort();
     }
-
+*/
     
     std::string line;
     std::string bytes;
@@ -35,43 +36,62 @@ void Table::loadTableFromFile(ifstream *stream) {
 
         size_t len = line.size();
         
-        if ((line.at(len-1) == '\n' && line.at(len-2) == '\r') || (line.at(len-2) == '\n' && line.at(len-1) == '\r')){
-            line = line.substr(0, len-2);
+        if (len > 0) {
+            
+            if ((line.at(len-1) == '\n' && line.at(len-2) == '\r') || (line.at(len-2) == '\n' && line.at(len-1) == '\r')){
+                line = line.substr(0, len-2);
+            }
+            
+            if (line.at(len-1) == '\n' ||line.at(len-1) == '\r') {
+                line = line.substr(0, len-1);
+            }
+            
+            size_t pos = line.find("=");
+            
+            bytes = line.substr(0, pos);
+            
+            values = line.substr(pos+1, line.size()-pos-1);
+            
+            string tmp = "";
+            int k = 0;
+            for (int j=0; j<values.size(); j++) {
+                if (values[j] == '\\') {
+                    if (values[j+1] == 'n') {
+                        tmp += '\n';
+                        k++;
+                        j++;
+                    }
+                }
+                else { tmp+= values[j];}
+                
+            }
+            
+            values = tmp;
+            
+            vector<int>* vec = str2byt(bytes);
+            /*
+            for (int i=0; i<vec->size(); i++) {
+                printf("%02X", vec->at(i)); 
+            }
+            printf("=%s\n", values.c_str());
+            */
+            //std::cout << bytes << values  << std::endl;
+            //(*((m.insert(value_type(k, data_type()))).first)).second
+            //extract[vec] = values;
+            extract.insert(pair<vector<int>, string>(*vec, values));
+            insert.insert(pair<string, vector<int> >(values, *vec));
+            //extract.insert(std::pair<std::string, std::vector<int>* >(values, vec));
+            // insert.insert(ExtractTableElement(vec, values));
+            
+            
+            std::flush(cout);
         }
-        
-        if (line.at(len-1) == '\n' ||line.at(len-1) == '\r') {
-            line = line.substr(0, len-1);
-        }
-        
-        size_t pos = line.find("=");
-        
-        bytes = line.substr(0, pos);
-        
-        values = line.substr(pos+1, line.size()-pos-1);
-        
-        
-        
-        vector<int>* vec = str2byt(bytes);
-        
-        for (int i=0; i<vec->size(); i++) {
-            printf("%02X:", vec->at(i)); 
-        }
-        
-        //std::cout << bytes << values  << std::endl;
-        //(*((m.insert(value_type(k, data_type()))).first)).second
-        //extract[vec] = values;
-        extract.insert(pair<vector<int>, string>(*vec, values));
-        insert.insert(pair<string, vector<int> >(values, *vec));
-        //extract.insert(std::pair<std::string, std::vector<int>* >(values, vec));
-       // insert.insert(ExtractTableElement(vec, values));
-        
-        
-        std::flush(cout);
-    }
         count++;
+    }
+      
     
-    stream->close();
-    printf("coucou\n");
+    //stream->close();
+    
     std::cout << count << " entries loaded" << endl;
     std::flush(cout);
 }
@@ -91,5 +111,6 @@ string Table::getValueForBytes(vector<int> bytes) {
     if (it == extract.end()) {
         return string();
     }
+    
     return it->second;
 }

@@ -40,6 +40,17 @@ int main (int argc, const char * argv[])
         return retval;  
     };
     
+    /*
+    FormulaBlock lua_forumal = ^(long value) {
+        long retval = 0L;
+        
+        // call Lua subprocedure
+        
+        return retval;
+    };
+     */
+    
+    
     PointerTableDef *bank1PtrDef = new PointerTableDef();
     bank1PtrDef->setBegin(0x080200);
     bank1PtrDef->setCount(0x200);
@@ -55,13 +66,14 @@ int main (int argc, const char * argv[])
     
     cout << "pointer loaded " << bank1Ptr->size() << endl;
     
-    for (int i=0; i<bank1Ptr->size(); i++) {
+  for (int i=0; i<bank1Ptr->size(); i++) {
         cout << dec << bank1Ptr->at(i)->getIndex() << ":" << hex << bank1Ptr->at(i)->getValue() << endl;
     }
     
+    
     Table * ff4 = new Table();
     
-    ifstream *tablefile = new ifstream("/Users/manz/Desktop/TMP CARO/Traduction/Hacking/FF4/tables/FF4vwf.tbl");
+    ifstream *tablefile = new ifstream("/Users/manz/Desktop/TMP CARO/Traduction/Hacking/FF4/tables/Ff4t12.tbl");
     
     if (tablefile->bad()) {
         std::cout << "Error while opening file" << std::endl;
@@ -71,7 +83,7 @@ int main (int argc, const char * argv[])
     
     vector<int> vec = vector<int>();
     
-    vec.push_back(0x00);
+    vec.push_back(0xC4);
     
     vector<int> bytesForA = ff4->getBytesForValue("<FIN>\\n");
     
@@ -89,6 +101,20 @@ int main (int argc, const char * argv[])
     std::cout << "calling callback(3) should return 30 :(" << dec << callback(3) << ")" << std::endl;
     
     // insert code here...
+    
+    
+    TextBlockDef *bank1Text = new TextBlockDef();
+    
+    bank1Text->setPointers(bank1Ptr);
+    bank1Text->setTable(ff4);
+    
+    bank1Text->setBegin(0x80600);
+    bank1Text->setEnd(0x8F693);
+    string f = "/Users/manz/FF4J2e.smc";
+    bank1Text->setFrom(f);
+    TextBlock *block = new TextBlock();
+    block->dump("/tmp/bank1.txt", bank1Text);
+    
     
     return 0;
 }

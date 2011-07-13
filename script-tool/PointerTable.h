@@ -24,7 +24,7 @@ public:
     PointerTable();
     ~PointerTable();
     
-    const Pointer* at(int index);
+    const Pointer* at(unsigned long index);
     
     void add(Pointer *p);
     
