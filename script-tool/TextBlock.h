@@ -6,8 +6,16 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
+#ifndef TEXTBLOCK_H
+#define TEXTBLOCK_H
+
 #include "PointerTable.h"
 #include "TextBlockDef.h"
+
+#if MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_6
+#include <dispatch/dispatch.h>
+#endif
+
 #include <string>
 #include <sstream>
 
@@ -23,3 +31,5 @@ public:
     
     string* dumpRange(long start, long end, TextBlockDef *def);
 };
+
+#endif /* TEXTBLOCK_H */

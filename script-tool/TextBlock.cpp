@@ -28,8 +28,8 @@ string* TextBlock::dumpRange(long start, long end, TextBlockDef *def) {
     
     long current_pos = start;
     
-    char *buffer = new char[4];
-    size_t bufferSize = 4;
+    char *buffer = new char[table->getKeyMaxLength()];
+    size_t bufferSize = table->getKeyMaxLength();
     vector<int> vec;
     
     while (current_pos < end) {
@@ -95,8 +95,27 @@ size_t TextBlock::dump(string to, TextBlockDef* def) {
     dumpfile.open(to.c_str());
     
     
-    dumpfile << "<dump>";
+#ifdef __DISPATCH_PUBLIC__
+    string **dumped_ranges= new string*[pointers->size()];
     
+    dispatch_apply(pointers->size() - 1, dispatch_get_global_queue(0, 0), ^(size_t count) {
+        const Pointer *start = pointers->at(count); // getting pointer.
+        const Pointer *end = pointers->at(count + 1); //getting next pointer.
+        
+        //long start_addr = start->getValue();
+        
+        
+        dumped_ranges[count] = this->dumpRange(start->getValue(), end->getValue(), def); 
+    });
+    
+    dumpfile << "<dump>" << endl;
+    for (int i=0; i<pointers->size()-1; i++) {
+        dumpfile << "<pointer index=\"" << i << "\">";
+        dumpfile << *dumped_ranges[i];
+        dumpfile << "</pointer>" << endl;
+    }
+#else   
+   
     int count;
     for (count=0; count<pointers->size() - 1; count++) {
         
@@ -109,19 +128,19 @@ size_t TextBlock::dump(string to, TextBlockDef* def) {
         
         string *value = this->dumpRange(start->getValue(), end->getValue(), def);
         dumpfile << *value;
-        dumpfile << "</pointer>";
+        dumpfile << "</pointer>" << endl;
     }
-    
+#endif
 
     
     //now we handle the last Pointer
     const Pointer *lastPointer = pointers->at(pointers->size()-1);
     
     string *value = this->dumpRange(lastPointer->getValue(), def->getEnd(), def);
-    dumpfile << "<pointer index=\"" << count << "\">";
+    dumpfile << "<pointer index=\"" << pointers->size() << "\">";
     dumpfile << *value;
-    dumpfile << "</pointer>";
-    dumpfile << "</dump>";
+    dumpfile << "</pointer>" << endl;
+    dumpfile << "</dump>" << endl;
     return 0;
 }
 

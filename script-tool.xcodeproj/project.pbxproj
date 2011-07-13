@@ -66,10 +66,6 @@
 		B435141C139D142B0092BBD2 /* TextBlock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextBlock.cpp; sourceTree = "<group>"; };
 		B435141D139D142B0092BBD2 /* TextBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextBlock.h; sourceTree = "<group>"; };
 		B435143B139D176D0092BBD2 /* libscript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libscript.h; sourceTree = "<group>"; };
-		B435143D139D18EB0092BBD2 /* Font.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Font.cpp; sourceTree = "<group>"; };
-		B435143E139D18EB0092BBD2 /* Font.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Font.h; sourceTree = "<group>"; };
-		B4351440139D19250092BBD2 /* FontDef.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FontDef.cpp; sourceTree = "<group>"; };
-		B4351441139D19250092BBD2 /* FontDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontDef.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +109,6 @@
 			children = (
 				B43513FB139CD1DD0092BBD2 /* main.cpp */,
 				B43513FD139CD1DD0092BBD2 /* script_tool.1 */,
-				B435143C139D18940092BBD2 /* libfont Sources */,
 				B4351418139CDF3B0092BBD2 /* libscript Sources */,
 			);
 			path = "script-tool";
@@ -143,17 +138,6 @@
 				B435143B139D176D0092BBD2 /* libscript.h */,
 			);
 			name = "libscript Sources";
-			sourceTree = "<group>";
-		};
-		B435143C139D18940092BBD2 /* libfont Sources */ = {
-			isa = PBXGroup;
-			children = (
-				B435143D139D18EB0092BBD2 /* Font.cpp */,
-				B435143E139D18EB0092BBD2 /* Font.h */,
-				B4351440139D19250092BBD2 /* FontDef.cpp */,
-				B4351441139D19250092BBD2 /* FontDef.h */,
-			);
-			name = "libfont Sources";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,6 +344,7 @@
 				B40C0628139E23D200EFB9C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B43513F1139CD1DC0092BBD2 /* Build configuration list for PBXProject "script-tool" */ = {
 			isa = XCConfigurationList;

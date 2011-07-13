@@ -78,6 +78,10 @@ void Table::loadTableFromFile(ifstream *stream) {
             //std::cout << bytes << values  << std::endl;
             //(*((m.insert(value_type(k, data_type()))).first)).second
             //extract[vec] = values;
+            
+            this->slen = max(this->slen, values.size());
+            this->blen = max(this->blen, vec->size());
+            
             extract.insert(pair<vector<int>, string>(*vec, values));
             insert.insert(pair<string, vector<int> >(values, *vec));
             //extract.insert(std::pair<std::string, std::vector<int>* >(values, vec));
@@ -113,4 +117,12 @@ string Table::getValueForBytes(vector<int> bytes) {
     }
     
     return it->second;
+}
+
+size_t Table::getValueMaxLength() const {
+    return this->slen;
+}
+
+size_t Table::getKeyMaxLength() const {
+    return this->blen;
 }

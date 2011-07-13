@@ -24,6 +24,9 @@ class Table {
 private:
     map<vector<int>, string> extract;
     map<string, vector<int> > insert;
+    size_t slen;
+    size_t blen;
+    
 public:
     
     Table();
@@ -33,5 +36,9 @@ public:
     
     string getValueForBytes(vector<int> bytes);
     vector<int> getBytesForValue(string value);
+    
+    size_t getValueMaxLength()const;
+    size_t getKeyMaxLength()const;
+    
 };
 #endif /* TABLE_H */
