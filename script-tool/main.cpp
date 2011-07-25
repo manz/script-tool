@@ -157,6 +157,10 @@ int main (int argc, const char * argv[])
     dump_bank2(ff4);
     dump_bank3(ff4);
     
+    TextBlock *block = new TextBlock();
+    TextBlockDef *def = new TextBlockDef();
+    def->setTable(ff4);
+    block->insert("/tmp/bank1.txt", def);
     
     
     return 0;
