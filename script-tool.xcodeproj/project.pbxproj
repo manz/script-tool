@@ -18,6 +18,7 @@
 		B40C0631139E240200EFB9C6 /* TextBlock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B435141C139D142B0092BBD2 /* TextBlock.cpp */; };
 		B40C0632139E242E00EFB9C6 /* liblibscript.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B40C0625139E23D200EFB9C6 /* liblibscript.a */; };
 		B43513FC139CD1DD0092BBD2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B43513FB139CD1DD0092BBD2 /* main.cpp */; };
+		B4B3529F13CE4CE400977248 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B4B3529D13CE4B5500977248 /* libxml2.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		B435141C139D142B0092BBD2 /* TextBlock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextBlock.cpp; sourceTree = "<group>"; };
 		B435141D139D142B0092BBD2 /* TextBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextBlock.h; sourceTree = "<group>"; };
 		B435143B139D176D0092BBD2 /* libscript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libscript.h; sourceTree = "<group>"; };
+		B4B3529D13CE4B5500977248 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4B3529F13CE4CE400977248 /* libxml2.dylib in Frameworks */,
 				B40C0632139E242E00EFB9C6 /* liblibscript.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,6 +93,7 @@
 		B43513EC139CD1DC0092BBD2 = {
 			isa = PBXGroup;
 			children = (
+				B4B3529D13CE4B5500977248 /* libxml2.dylib */,
 				B43513FA139CD1DC0092BBD2 /* script-tool */,
 				B43513F8139CD1DC0092BBD2 /* Products */,
 			);
@@ -253,7 +257,7 @@
 		B40C0627139E23D200EFB9C6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				COPY_PHASE_STRIP = NO;
 				EXECUTABLE_PREFIX = lib;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -262,19 +266,23 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = $SDK_DIR/usr/include/libxml2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = $SDK_DIR/usr/include/libxml2;
 			};
 			name = Debug;
 		};
 		B40C0628139E23D200EFB9C6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EXECUTABLE_PREFIX = lib;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				HEADER_SEARCH_PATHS = $SDK_DIR/usr/include/libxml2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = $SDK_DIR/usr/include/libxml2;
 			};
 			name = Release;
 		};
@@ -319,7 +327,9 @@
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				HEADER_SEARCH_PATHS = $SDK_DIR/usr/include/libxml2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -330,7 +340,9 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				HEADER_SEARCH_PATHS = $SDK_DIR/usr/include/libxml2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};
