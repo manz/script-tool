@@ -17,7 +17,7 @@ TextBlock::~TextBlock() {
     
 }
 
-size_t TextBlock::insert(string dump, TextBlockDef *def) {
+PointerTable* TextBlock::insert(string dump, TextBlockDef *def) {
     
     xmlDocPtr doc;
     doc = xmlParseFile(dump.c_str());
@@ -31,13 +31,11 @@ size_t TextBlock::insert(string dump, TextBlockDef *def) {
     int count = std::atoi((const char*)count_str);
     
     xmlNodePtr n;
-    
     for (n = pointers; n; n = n->next) {
         if (n->type == XML_ELEMENT_NODE) {
             xmlChar* index = xmlGetProp(n, (xmlChar*)"index");
             string s((const char*)xmlNodeGetContent(n));
-            this->insertRange(s, def);         
-            cout << "[" << index << "]" << xmlNodeGetContent(n);
+            cout << "[" << index << "]" << "\"" << xmlNodeGetContent(n) << "\"" << endl;
         }
     } 
     

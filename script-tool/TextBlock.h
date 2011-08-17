@@ -32,7 +32,7 @@ public:
     ~TextBlock();
     
     size_t dump(string to, TextBlockDef* def);
-    size_t insert(string dump, TextBlockDef*def); 
+    PointerTable* insert(string dump, TextBlockDef*def); 
     string* dumpRange(long start, long end, TextBlockDef *def);
     unsigned char *insertRange(string s, TextBlockDef *def);
 };

@@ -11,8 +11,6 @@
 
 #include "Table.h"
 #include "Pointer.h"
-#include "Extractor.h"
-#include "Inserter.h"
 #include "PointerTable.h"
 #include "PointerTableDef.h"
 #include "TextBlockDef.h"
