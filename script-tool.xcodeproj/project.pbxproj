@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		B40C0629139E240200EFB9C6 /* Table.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4351403139CD1FC0092BBD2 /* Table.cpp */; };
 		B40C062A139E240200EFB9C6 /* Pointer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4351406139CD3FA0092BBD2 /* Pointer.cpp */; };
-		B40C062B139E240200EFB9C6 /* Extractor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4351409139CD6770092BBD2 /* Extractor.cpp */; };
-		B40C062C139E240200EFB9C6 /* Inserter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B435140C139CD68A0092BBD2 /* Inserter.cpp */; };
 		B40C062D139E240200EFB9C6 /* PointerTable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B435140F139CD9840092BBD2 /* PointerTable.cpp */; };
 		B40C062E139E240200EFB9C6 /* PointerTableDef.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4351412139CDA350092BBD2 /* PointerTableDef.cpp */; };
 		B40C062F139E240200EFB9C6 /* TextBlockDef.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4351415139CDEDE0092BBD2 /* TextBlockDef.cpp */; };
@@ -46,27 +44,23 @@
 /* Begin PBXFileReference section */
 		B40C0625139E23D200EFB9C6 /* liblibscript.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblibscript.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B43513F7139CD1DC0092BBD2 /* script-tool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "script-tool"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B43513FB139CD1DD0092BBD2 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		B43513FB139CD1DD0092BBD2 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = main.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		B43513FD139CD1DD0092BBD2 /* script_tool.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = script_tool.1; sourceTree = "<group>"; };
 		B4351403139CD1FC0092BBD2 /* Table.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Table.cpp; sourceTree = "<group>"; };
 		B4351404139CD1FC0092BBD2 /* Table.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Table.h; sourceTree = "<group>"; };
-		B4351406139CD3FA0092BBD2 /* Pointer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Pointer.cpp; sourceTree = "<group>"; };
-		B4351407139CD3FA0092BBD2 /* Pointer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pointer.h; sourceTree = "<group>"; };
-		B4351409139CD6770092BBD2 /* Extractor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Extractor.cpp; sourceTree = "<group>"; };
-		B435140A139CD6770092BBD2 /* Extractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Extractor.h; sourceTree = "<group>"; };
-		B435140C139CD68A0092BBD2 /* Inserter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Inserter.cpp; sourceTree = "<group>"; };
-		B435140D139CD68A0092BBD2 /* Inserter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Inserter.h; sourceTree = "<group>"; };
+		B4351406139CD3FA0092BBD2 /* Pointer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = Pointer.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
+		B4351407139CD3FA0092BBD2 /* Pointer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Pointer.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		B435140F139CD9840092BBD2 /* PointerTable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PointerTable.cpp; sourceTree = "<group>"; };
 		B4351410139CD9840092BBD2 /* PointerTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointerTable.h; sourceTree = "<group>"; };
 		B4351412139CDA350092BBD2 /* PointerTableDef.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PointerTableDef.cpp; sourceTree = "<group>"; };
 		B4351413139CDA350092BBD2 /* PointerTableDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointerTableDef.h; sourceTree = "<group>"; };
 		B4351415139CDEDE0092BBD2 /* TextBlockDef.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextBlockDef.cpp; sourceTree = "<group>"; };
 		B4351416139CDEDE0092BBD2 /* TextBlockDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextBlockDef.h; sourceTree = "<group>"; };
-		B4351419139D10A20092BBD2 /* BytesHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BytesHelper.cpp; sourceTree = "<group>"; };
-		B435141A139D10A30092BBD2 /* BytesHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BytesHelper.h; sourceTree = "<group>"; };
+		B4351419139D10A20092BBD2 /* BytesHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = BytesHelper.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
+		B435141A139D10A30092BBD2 /* BytesHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = BytesHelper.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		B435141C139D142B0092BBD2 /* TextBlock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextBlock.cpp; sourceTree = "<group>"; };
 		B435141D139D142B0092BBD2 /* TextBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextBlock.h; sourceTree = "<group>"; };
-		B435143B139D176D0092BBD2 /* libscript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libscript.h; sourceTree = "<group>"; };
+		B435143B139D176D0092BBD2 /* libscript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = libscript.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		B4B3529D13CE4B5500977248 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -125,10 +119,6 @@
 				B4351404139CD1FC0092BBD2 /* Table.h */,
 				B4351406139CD3FA0092BBD2 /* Pointer.cpp */,
 				B4351407139CD3FA0092BBD2 /* Pointer.h */,
-				B4351409139CD6770092BBD2 /* Extractor.cpp */,
-				B435140A139CD6770092BBD2 /* Extractor.h */,
-				B435140C139CD68A0092BBD2 /* Inserter.cpp */,
-				B435140D139CD68A0092BBD2 /* Inserter.h */,
 				B435140F139CD9840092BBD2 /* PointerTable.cpp */,
 				B4351410139CD9840092BBD2 /* PointerTable.h */,
 				B4351412139CDA350092BBD2 /* PointerTableDef.cpp */,
@@ -225,8 +215,6 @@
 			files = (
 				B40C0629139E240200EFB9C6 /* Table.cpp in Sources */,
 				B40C062A139E240200EFB9C6 /* Pointer.cpp in Sources */,
-				B40C062B139E240200EFB9C6 /* Extractor.cpp in Sources */,
-				B40C062C139E240200EFB9C6 /* Inserter.cpp in Sources */,
 				B40C062D139E240200EFB9C6 /* PointerTable.cpp in Sources */,
 				B40C062E139E240200EFB9C6 /* PointerTableDef.cpp in Sources */,
 				B40C062F139E240200EFB9C6 /* TextBlockDef.cpp in Sources */,
