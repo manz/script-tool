@@ -31,9 +31,11 @@ size_t PointerTable::size() {
 }
 
 void PointerTable::loadFromFile(ifstream* stream, PointerTableDef *def) {
-    //TODO implements loading pointers from file
+    
     stream->seekg(def->getBegin());
+    
     this->pointerTableDef = def;
+    
     unsigned char *buffer = new unsigned char[def->getLength()];
     FormulaBlock callback = def->getFormulaCallback();
     
@@ -44,7 +46,6 @@ void PointerTable::loadFromFile(ifstream* stream, PointerTableDef *def) {
         
         if (def->getLittleEndian()) {
             for (int j=0; j<def->getLength(); j++) {
-                
                 value = value + (buffer[j] << (8 * j));
             }
         }

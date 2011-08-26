@@ -19,6 +19,7 @@ private:
     int length;
     bool little_endian;
     FormulaBlock formula_callback;
+    
 public:
     PointerTableDef();
     void setFormulaCallback(long (^callback)(long));

@@ -24,14 +24,30 @@ public:
     PointerTable();
     ~PointerTable();
     
+    /**
+     * Getting pointer at specified index.
+     */
     const Pointer* at(unsigned long index);
     
+    /**
+     * Adding a pointer to the table
+     */
     void add(Pointer *p);
     
+    /**
+     * Getting the size of the pointer table
+     */
     size_t size();
     
-    
+    /**
+     * loads the pointer table from the stream
+     * with the def passed as parameter.
+     */
     void loadFromFile(ifstream* stream, PointerTableDef *def);
+    
+    /**
+     * Write the pointer table to the stream.
+     */
     void writeToFile(ofstream* stream, PointerTableDef *def);
 
 };

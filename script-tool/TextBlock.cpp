@@ -18,6 +18,7 @@ TextBlock::~TextBlock() {
 }
 
 PointerTable* TextBlock::insert(string dump, TextBlockDef *def) {
+    PointerTable *pointerTable = new PointerTable();
     
     xmlDocPtr doc;
     doc = xmlParseFile(dump.c_str());
@@ -41,6 +42,10 @@ PointerTable* TextBlock::insert(string dump, TextBlockDef *def) {
     
     if (doc == NULL) {
         // issue an error
+    }
+    
+    if (count != pointerTable->size()) {
+        cout << "Pointers count differs from elements count in the script file" << endl; 
     }
     
     xmlFreeDoc(doc);

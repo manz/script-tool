@@ -10,6 +10,13 @@
 #include "libscript.h"
 #include <fstream>
 
+/* Prototype Defs */
+void dump_bank1(Table *ff4);
+void dump_bank2(Table *ff4);
+void dump_bank3(Table *ff4);
+
+
+/* Test Functions implementation */
 void dump_bank1(Table *ff4) {
     long bank1 = 0x80600;
     
