@@ -14,8 +14,8 @@ using namespace std;
 
 class Pointer {
 private:
-    long value;
     int index;
+    long value;
     
 public:
     Pointer(int index, long value);
