@@ -36,7 +36,7 @@ void dump_bank1(Table *ff4) {
     
     PointerTable *bank1Ptr = new PointerTable();
     
-    ifstream *rom = new ifstream("/Users/manz/FF4J2e.smc");
+    ifstream *rom = new ifstream("FF4J2e.smc");
     
     bank1Ptr->loadFromFile(rom, bank1PtrDef);
     
@@ -51,10 +51,15 @@ void dump_bank1(Table *ff4) {
     
     bank1Text->setBegin(0x80600);
     bank1Text->setEnd(0x8F693);
-    string f = "/Users/manz/FF4J2e.smc";
+    string f = "FF4J2e.smc";
     bank1Text->setFrom(f);
     TextBlock *block = new TextBlock();
     block->dump("/tmp/bank1.txt", bank1Text);
+    delete bank1PtrDef;
+    delete block;
+    delete bank1Ptr;
+    delete bank1Text;
+    delete rom;
 }
 
 void dump_bank2(Table *ff4) {
@@ -76,7 +81,7 @@ void dump_bank2(Table *ff4) {
     
     PointerTable *bank1Ptr = new PointerTable();
     
-    ifstream *rom = new ifstream("/Users/manz/FF4J2e.smc");
+    ifstream *rom = new ifstream("FF4J2e.smc");
     
     bank1Ptr->loadFromFile(rom, bank1PtrDef);
     
@@ -91,7 +96,7 @@ void dump_bank2(Table *ff4) {
     
     bank1Text->setBegin(0x110400);
     bank1Text->setEnd(0x115650);
-    string f = "/Users/manz/FF4J2e.smc";
+    string f = "FF4J2e.smc";
     bank1Text->setFrom(f);
     TextBlock *block = new TextBlock();
     block->dump("/tmp/bank2.txt", bank1Text);
@@ -152,7 +157,7 @@ void dump_bank3(Table *ff4) {
     
     PointerTable *bank1Ptr = new PointerTable();
     
-    ifstream *rom = new ifstream("/Users/manz/FF4J2e.smc");
+    ifstream *rom = new ifstream("FF4J2e.smc");
     
     bank1Ptr->loadFromFile(rom, bank1PtrDef);
     
@@ -167,7 +172,7 @@ void dump_bank3(Table *ff4) {
     
     bank1Text->setBegin(0x100500);
     bank1Text->setEnd(0x10F033);
-    string f = "/Users/manz/FF4J2e.smc";
+    string f = "FF4J2e.smc";
     bank1Text->setFrom(f);
     TextBlock *block = new TextBlock();
     block->dump("/tmp/bank3.txt", bank1Text);
@@ -185,9 +190,11 @@ int main (int argc, const char * argv[])
      6 extf .\roms\FF4J2E.smc .\tables\ff4f.tbl .\txt_us\items.txt $78200 $100 9 $00 $00
 
      */
+
+    printf("Script-tool v1.0.0\n");
     Table * ff4 = new Table();
     
-    ifstream *tablefile = new ifstream("/Users/manz/Desktop/TMP CARO/Traduction/Hacking/FF4/tables/Ff4t12.tbl");
+    ifstream *tablefile = new ifstream("Ff4t12.tbl");
     
     if (tablefile->bad()) {
         std::cout << "Error while opening file" << std::endl;
@@ -197,8 +204,12 @@ int main (int argc, const char * argv[])
     
     cout << "tables entries loaded : " << count << endl;
     tablefile->close();
-    
+    delete tablefile;
+
+printf("Loaded table ???\n");   
+ 
     dump_bank1(ff4);
+    /*
     dump_bank2(ff4);
     dump_bank3(ff4);
     
@@ -206,8 +217,8 @@ int main (int argc, const char * argv[])
     TextBlockDef *def = new TextBlockDef();
     def->setTable(ff4);
     block->insert("/tmp/bank1.txt", def);
-    
-    
+    */
+    delete ff4;
     return 0;
 }
 

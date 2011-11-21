@@ -176,7 +176,7 @@ size_t TextBlock::dump(string to, TextBlockDef* def) {
         //long start_addr = start->getValue();
         
         
-        dumped_ranges[count] = this->dumpRange(start->getValue(), end->getValue(), def); 
+        dumped_ranges[count] = dumpRange(start->getValue(), end->getValue(), def); 
     });
     
     dumpfile << "<dump count=\""<< pointers->size() <<"\">" << endl;
@@ -187,6 +187,7 @@ size_t TextBlock::dump(string to, TextBlockDef* def) {
         dumpfile << "]]>";
         dumpfile << "</pointer>" << endl;
     }
+    delete[] dumped_ranges;
 #else   
    
     int count;

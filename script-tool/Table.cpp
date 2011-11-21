@@ -9,7 +9,7 @@
 #include "Table.h"
 
 
-Table::Table() {
+Table::Table() : slen(0), blen(0) {
     
 }
 
@@ -18,12 +18,11 @@ Table::~Table() {
 }
 
 size_t Table::loadTableFromFile(ifstream *stream) {
-    /*
     if (!stream->is_open()) {
         std::cout << "file isn't opened" << std:: endl;
         abort();
     }
-*/
+
     
     std::string line;
     std::string bytes;
