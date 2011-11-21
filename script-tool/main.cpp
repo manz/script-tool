@@ -7,8 +7,8 @@
 //
 
 #include <iostream>
-#include "libscript.h"
 #include <fstream>
+#include "libscript.h"
 
 /* Prototype Defs */
 void dump_bank1(Table *ff4);
@@ -107,6 +107,42 @@ void dump_bank3(Table *ff4) {
         return retval;  
     };
     
+    
+    
+    /*
+     <Project>
+     
+        <Dump>
+            <TextGroup>
+                <table>ff412.tbl</table>
+                <TextBlockDef>
+                    <from>/Users/manz/FF4J2e.smc</from>
+     
+                    <!--
+                        using the xml defs the pointers are in the same file
+                        for more specified uses you shall use the scripting language
+                    -->
+                    <to>/tmp/bank3.txt</to>
+                    <begin>0x100500</begin>
+                    <end>0x10F033</end>
+     
+                    <PointerTableDef>
+                        <begin>0x100200</begin>
+                        <count>0x150</count>
+                        <length>2</length>
+                        <base>0x100500</base> <!-- for default formula -->
+                
+                        <little_endian>true</little_endian>
+                    </PointerTableDef>
+        
+        
+                </TextBlockDef>
+            </TextGroup>
+        </Dump>
+     </Project>
+     */
+    
+    
     PointerTableDef *bank1PtrDef = new PointerTableDef();
     bank1PtrDef->setBegin(0x100200);
     bank1PtrDef->setCount(0x150);
@@ -157,7 +193,9 @@ int main (int argc, const char * argv[])
         std::cout << "Error while opening file" << std::endl;
     }
     
-    ff4->loadTableFromFile(tablefile);
+    size_t count = ff4->loadTableFromFile(tablefile);
+    
+    cout << "tables entries loaded : " << count << endl;
     tablefile->close();
     
     dump_bank1(ff4);

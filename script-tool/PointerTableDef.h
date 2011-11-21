@@ -8,6 +8,7 @@
 #ifndef POINTERTABLEDEF_H
 #define POINTERTABLEDEF_H
 
+#include <stddef.h>
 #include <Block.h>
 
 typedef long (^FormulaBlock)(long);

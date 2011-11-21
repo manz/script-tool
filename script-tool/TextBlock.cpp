@@ -23,6 +23,10 @@ PointerTable* TextBlock::insert(string dump, TextBlockDef *def) {
     xmlDocPtr doc;
     doc = xmlParseFile(dump.c_str());
     
+    if (doc == NULL) {
+        // issue an error
+    }
+    
     xmlNodePtr root = xmlDocGetRootElement(doc);
     
     xmlNodePtr pointers = root->children;
@@ -39,10 +43,6 @@ PointerTable* TextBlock::insert(string dump, TextBlockDef *def) {
             cout << "[" << index << "]" << "\"" << xmlNodeGetContent(n) << "\"" << endl;
         }
     } 
-    
-    if (doc == NULL) {
-        // issue an error
-    }
     
     if (count != pointerTable->size()) {
         cout << "Pointers count differs from elements count in the script file" << endl; 

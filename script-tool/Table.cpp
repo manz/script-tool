@@ -17,7 +17,7 @@ Table::~Table() {
     
 }
 
-void Table::loadTableFromFile(ifstream *stream) {
+size_t Table::loadTableFromFile(ifstream *stream) {
     /*
     if (!stream->is_open()) {
         std::cout << "file isn't opened" << std:: endl;
@@ -69,35 +69,20 @@ void Table::loadTableFromFile(ifstream *stream) {
             values = tmp;
             
             vector<int>* vec = str2byt(bytes);
-            /*
-            for (int i=0; i<vec->size(); i++) {
-                printf("%02X", vec->at(i)); 
-            }
-            printf("=%s\n", values.c_str());
-            */
-            //std::cout << bytes << values  << std::endl;
-            //(*((m.insert(value_type(k, data_type()))).first)).second
-            //extract[vec] = values;
             
             this->slen = max(this->slen, values.size());
             this->blen = max(this->blen, vec->size());
             
             extract.insert(pair<vector<int>, string>(*vec, values));
             insert.insert(pair<string, vector<int> >(values, *vec));
-            //extract.insert(std::pair<std::string, std::vector<int>* >(values, vec));
-            // insert.insert(ExtractTableElement(vec, values));
             
-            
+            //FIXME: is this thing still needed as we don't print anything to the stdout here ?
             std::flush(cout);
         }
         count++;
     }
-      
-    
-    //stream->close();
-    
-    std::cout << count << " entries loaded" << endl;
-    std::flush(cout);
+        
+    return count;
 }
 
 vector<int> Table::getBytesForValue(string value) {

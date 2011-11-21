@@ -32,7 +32,7 @@ public:
     Table();
     ~Table();
     
-    void loadTableFromFile(ifstream *stream);
+    size_t loadTableFromFile(ifstream *stream);
     
     string getValueForBytes(vector<int> bytes);
     vector<int> getBytesForValue(string value);

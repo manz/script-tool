@@ -8,7 +8,7 @@
 
 #include "PointerTableDef.h"
 
-PointerTableDef::PointerTableDef() {
+PointerTableDef::PointerTableDef() : formula_callback(NULL) {
     
 }
 
